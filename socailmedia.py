@@ -16,7 +16,7 @@ db = pymysql.connect(
 # DASHBOARD
 # -------------------------------
 @app.route("/")
-def index():
+def max():
 
     cursor = db.cursor()
 
@@ -33,10 +33,10 @@ def index():
     engagement = cursor.fetchone()[0]
 
     if engagement is None:
-        engagement = 0
+        engagement = 0 
 
     return render_template(
-        "index.html",
+        "max.html",
         user_count=user_count,
         post_count=post_count,
         engagement=engagement
