@@ -1,0 +1,21 @@
+CREATE TABLE Users (
+    user_id INT PRIMARY KEY  ,
+    username VARCHAR(50) NOT NULL,
+    email VARCHAR(100) UNIQUE,
+     country VARCHAR(100),
+    join_date DATE
+);
+CREATE TABLE Posts (
+    post_id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT,
+    content TEXT,
+    post_date DATE,
+    hashtags VARCHAR(255)
+);
+CREATE TABLE Engagement (
+    engagement_id INT PRIMARY KEY AUTO_INCREMENT,
+    post_id INT,
+    likes INT,
+    comments INT,
+    shares INT
+);
